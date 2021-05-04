@@ -13,9 +13,7 @@ For setting up Icecast Relay, see http://www.icecast.org/docs/icecast-2.1.0/icec
 Use a ```<video>``` tag and set playlist url with data-playlist attribute.
 Ex:
 ```html
-<audio id="video" controls loop autoplay width="640" 
-    data-playlist="http://live.cloudfrancois.fr/playlist/faimaison">
-</audio> 
+<audio id="video"controls autoplay data-playlist="http://enzomtp.dragonia-pvp.fr/Assets/Musics.m3u"></audio>
 ```
 
 
