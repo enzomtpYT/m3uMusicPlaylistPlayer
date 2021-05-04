@@ -38,8 +38,4 @@ m3uStreamPlayer.init({selector: '#video', debug: false});
 
 *NB :* You can simply pass a selector string like ```m3uStreamPlayer.init('#video');```
 
-
-## Example ##
-
-Working example with FAImaison.net streaming playlist in faimaison.html file, 
-and on <a href="http://faimaison.net">faimaison.net</a>
+This is a fork the orginial : https://github.com/opi/m3uStreamPlayer
