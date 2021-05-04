@@ -36,4 +36,4 @@ m3uStreamPlayer.init({selector: '#audio', debug: false});
 
 *NB :* You can simply pass a selector string like ```m3uStreamPlayer.init('#audio');```
 
-This is a fork the orginial : https://github.com/opi/m3uStreamPlayer
+This is a fork the orginial ( original is for video playlist ) : https://github.com/opi/m3uStreamPlayer
