@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Ma playlist</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <style>
+        .container {
+            height: 200px;
+            position: relative;
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
 
     <div class="container">
-    <div class="center">
+        <div class="center">
 
-      <h1>My Playlist</h1>
-      <audio id="video"controls autoplay data-playlist="http://enzomtp.dragonia-pvp.fr/Assets/Musics.m3u"></audio>
+            <h1>My Playlist</h1>
+            <audio id="audio" controls autoplay data-playlist="http://enzomtp.dragonia-pvp.fr/Assets/Musics.m3u"></audio>
 
-      <p>
-      <button class="bouton bouton-outline-secondary" id="video-next-source">Next music</button>
-      <button class="bouton bouton-outline-secondary" id="video-randomize-source">Random music</button>
-      <button class="bouton bouton-outline-secondary" id="video-back-source">Previous music</button>
-      </p>
-    
-      <p>
-      <strong>The playlist&nbsp;:</strong> <a href="http://enzomtp.dragonia-pvp.fr/Assets/Musics/">link</a></li>
-      </p>
+            <p>
+                <button class="bouton bouton-outline-secondary" id="audio-next-source">Next music</button>
+                <button class="bouton bouton-outline-secondary" id="audio-randomize-source">Random music</button>
+                <button class="bouton bouton-outline-secondary" id="audio-back-source">Previous music</button>
+            </p>
 
-    </div>
+            <p>
+                <strong>The playlist&nbsp;:</strong> <a href="/Assets/Musics/">link</a></li>
+            </p>
+
+        </div>
     </div>
 
     <script src="m3uStreamPlayer.js"></script>
-    <script>m3uStreamPlayer.init({selector: '#video', debug: true});</script>
     <script>
-
-      /**
-       * Buttons
-       */
-      var buttonNextSource = document.querySelector('#video-next-source');
-      var buttonBackSource = document.querySelector('#video-back-source');
-      var buttonRandomizeSource = document.querySelector('#video-randomize-source');
-      buttonNextSource.addEventListener('click', function(){ m3uStreamPlayer.nextSource(document.querySelector('#video')); })
-      buttonBackSource.addEventListener('click', function(){ m3uStreamPlayer.backSource(document.querySelector('#video')); })
-      buttonRandomizeSource.addEventListener('click', function(){ m3uStreamPlayer.randomizeSource(document.querySelector('#video')); })
-
+        m3uStreamPlayer.init({selector: '#audio',debug: true});
+    </script>
+    <script>
+        /**
+         * Buttons
+         */
+        var buttonNextSource = document.querySelector('#audio-next-source');
+        var buttonBackSource = document.querySelector('#audio-back-source');
+        var buttonRandomizeSource = document.querySelector('#audio-randomize-source');
+        buttonNextSource.addEventListener('click', function () {m3uStreamPlayer.nextSource(document.querySelector('#audio'));})
+        buttonBackSource.addEventListener('click', function () {m3uStreamPlayer.backSource(document.querySelector('#audio'));})
+        buttonRandomizeSource.addEventListener('click', function () {m3uStreamPlayer.randomizeSource(document.querySelector('#audio'));})
     </script>
 
     <style>
-        
+
     </style>
-  </body>
+</body>
+
 </html>
