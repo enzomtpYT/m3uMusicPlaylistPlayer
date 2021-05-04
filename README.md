@@ -1,4 +1,4 @@
-# m3uStreamPlayer #
+# m3uMusicPlaylistPlayer #
 **HTML5 Player from m3u playlist**
 
 Use playlist from Icecast server with audio/video HTML5 element.
@@ -13,9 +13,9 @@ For setting up Icecast Relay, see http://www.icecast.org/docs/icecast-2.1.0/icec
 Use a ```<video>``` tag and set playlist url with data-playlist attribute.
 Ex:
 ```html
-<video id="video" controls loop autoplay width="640" 
+<audio id="video" controls loop autoplay width="640" 
     data-playlist="http://live.cloudfrancois.fr/playlist/faimaison">
-</video> 
+</audio> 
 ```
 
 
