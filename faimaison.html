@@ -2,43 +2,48 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>FAImaison - CloudFrancois</title>
+    <title>Ma playlist</title>
     <meta name="description" content="">
-    <style>
-      /* Responsive video */
-      video { 
-        max-width: 100%;
-        height: auto;
-      }
-
-      /* faimaison style */
-      body {
-        background: #37455b;
-        color: #cedbf0;
-      }
-      h1, a {
-        color: #b4d931;
-      }
-      video {
-        border: 1px solid #485a74;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
 
-    <h1>FAImaison</h1>
-    <video id="video"controls loop autoplay width="640" data-playlist="http://live.cloudfrancois.fr/playlist/faimaison"></video>
+    <style>
+      .container {
+        height: 200px;
+        position: relative;
+      }
+      
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      </style>
 
-    <p>
-    <button id="video-next-source">Next source</button>
-    <button id="video-randomize-source">Random source</button>
-    </p>
+    <div class="container">
+    <div class="center">
 
-    <p>
-    <strong>Playlist&nbsp;:</strong> <a href="http://live.cloudfrancois.fr/playlist/faimaison">http://live.cloudfrancois.fr/playlist/faimaison</a></li>
-    </p>
+      <h1>My Playlist</h1>
+      <audio id="video"controls autoplay data-playlist="/Assets/Musics.m3u"></audio>
 
-    <script src="m3uStreamPlayer.js"></script>
+      <p>
+      <button class="bouton bouton-outline-secondary" id="video-next-source">Next music</button>
+      <button class="bouton bouton-outline-secondary" id="video-randomize-source">Random music</button>
+      <button class="bouton bouton-outline-secondary" id="video-back-source">Previous music</button>
+      </p>
+    
+      <p>
+      <strong>The playlist&nbsp;:</strong> <a href="/Assets/Musics/">link</a></li>
+      </p>
+
+    </div>
+    </div>
+
+    <script src="/Assets/m3uStreamPlayer.js"></script>
     <script>m3uStreamPlayer.init({selector: '#video', debug: true});</script>
     <script>
 
@@ -46,10 +51,16 @@
        * Buttons
        */
       var buttonNextSource = document.querySelector('#video-next-source');
+      var buttonBackSource = document.querySelector('#video-back-source');
       var buttonRandomizeSource = document.querySelector('#video-randomize-source');
       buttonNextSource.addEventListener('click', function(){ m3uStreamPlayer.nextSource(document.querySelector('#video')); })
-      buttonRandomizeSource.addEventListener('click', function(){ v.randomizeSource(document.querySelector('#video')); })
+      buttonBackSource.addEventListener('click', function(){ m3uStreamPlayer.backSource(document.querySelector('#video')); })
+      buttonRandomizeSource.addEventListener('click', function(){ m3uStreamPlayer.randomizeSource(document.querySelector('#video')); })
 
     </script>
+
+    <style>
+        
+    </style>
   </body>
 </html>
