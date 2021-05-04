@@ -68,6 +68,16 @@
     elem.play();
   }
 
+    // Jump to back source.
+    var _backSource = function(elem) {
+      var sourceIdx  = _getSourceIdx(elem);
+      var backSourceIdx = (sourceIdx == elem.sources.length +1 ) ? 0 : sourceIdx - 1;
+  
+      elem.src = elem.sources[backSourceIdx];
+      if (exports.debug) console.log("Source updated: "+elem.src);
+      elem.play();
+    }
+
   // Randomize source.
   var _randomizeSource = function(elem) {
     elem.src = elem.sources[Math.floor(Math.random()*elem.sources.length)];
@@ -124,6 +134,11 @@
   exports.nextSource = function(elem) {
     _nextSource(elem);
   }
+
+    // Expose nextSource function
+    exports.backSource = function(elem) {
+      _backSource(elem);
+    }
 
   // Expose randomizeSource function
   exports.randomizeSource = function(elem) {
