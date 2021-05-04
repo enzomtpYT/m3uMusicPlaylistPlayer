@@ -10,7 +10,7 @@ For setting up Icecast Relay, see http://www.icecast.org/docs/icecast-2.1.0/icec
 
 ## HTML ##
 
-Use a ```<video>``` tag and set playlist url with data-playlist attribute.
+Use a ```<audio>``` tag and set playlist url with data-playlist attribute.
 Ex:
 ```html
 <audio id="video"controls autoplay data-playlist="http://enzomtp.dragonia-pvp.fr/Assets/Musics.m3u"></audio>
@@ -18,7 +18,7 @@ Ex:
 
 
 ## JS ##
-Load m3uStreamPlayer.js file after your ```<video>``` tag
+Load m3uStreamPlayer.js file after your ```<audio>``` tag
 ```html
 <script src="m3uStreamPlayer.js"></script>
 ```
@@ -26,7 +26,7 @@ Load m3uStreamPlayer.js file after your ```<video>``` tag
 and init script
 
 ```js
-m3uStreamPlayer.init({selector: '#video', debug: false});
+m3uStreamPlayer.init({selector: '#audio', debug: false});
 ```
 
 ### Options ###
@@ -34,6 +34,6 @@ m3uStreamPlayer.init({selector: '#video', debug: false});
 - **selector** : (string) Use querySelectorAll syntax
 - **debug** : (bool) Printed in console
 
-*NB :* You can simply pass a selector string like ```m3uStreamPlayer.init('#video');```
+*NB :* You can simply pass a selector string like ```m3uStreamPlayer.init('#audio');```
 
 This is a fork the orginial : https://github.com/opi/m3uStreamPlayer
